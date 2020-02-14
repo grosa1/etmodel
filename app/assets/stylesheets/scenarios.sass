@@ -25,11 +25,8 @@ table.default
 
 // Used on scenario index/new/show pages
 .scenario_wrapper
-  padding: 5px 20px 110px 20px
-
-  &#show_scenario
-    margin-right: 25%
-    margin-left: 25%
+  padding: 40px 400px 110px 400px
+  display: flex
 
   .warning
     margin-top: 10px
@@ -38,14 +35,29 @@ table.default
     border: 1px solid #f00
     border-radius: 5px
 
-  h1
-    display: inline-block
-    vertical-align: middle
+  .scenario_options
+    display: flex
+    flex-direction: column
 
-  a.button
-    display: inline-block
-    margin: 15px 0 15px 15px
-    float: right
+    a.button
+      // margin: 15px 0 15px 15px
+
+  .description
+    display: flex
+    flex-direction: column
+    flex-grow: 2
+    margin-left: 50px
+
+  .information
+    margin-right: 20px
+    ul li
+      list-style: none
+
+      &.image
+        background-color: #77add6
+        height: 150px
+        width: 150px
+        margin-bottom: 10px
 
   hr
     border: none
