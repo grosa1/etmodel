@@ -1,8 +1,9 @@
 header#top
   padding: 11px 0 8px
   // background-color: #66A2CA
+  background-color: white
   border-top: 1px solid #89b2d3
-  border-bottom: 1px solid #416d96
+  border-bottom: 1px solid #66A2CA
   // @include background(linear-gradient(top, #77add6, #4e8bbe))
   // @include box-shadow(0 1px 2px rgba(10, 10, 10, 0.25))
   min-width: 960px
@@ -61,24 +62,27 @@ header#top
   .sub-nav
     float: right
     list-style: none
-    margin: 14px 0 0 0
+    margin: 5px 0 0 0
     padding: 0
     > li
       float: left
       font-size: 15px
       font-weight: normal
-      padding: 0
-      margin: 0 0 0 -2px
+      padding: 3px
+      margin: 0 0 0 5px
       position: relative
+      border: 1px solid #66A2CA//#e8faf3
+      border-radius: 15px
+      height: 25px
       > a
         display: block
-        color: #416d96
+        color: #66A2CA
         text-decoration: none
         font-weight: bold
         // text-shadow: 0 1px 0 #2d6aac
         margin-right: 5px
         &:hover
-          color: #66A2CA
+          color: #416d96
       a.menu_toggler
         // background: url("/assets/header/toggle_down.png") right 6px no-repeat
         padding-right: 10px
@@ -86,7 +90,7 @@ header#top
           background-position: right -44px
         &.menu-open
           background-position: right -94px
-          color: #66A2CA
+          color: #416d96
         @include hidpi
           background-size: 12px 139px
           background-position: right -69px

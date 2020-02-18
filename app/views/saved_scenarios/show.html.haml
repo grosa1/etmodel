@@ -3,36 +3,78 @@
   - if @warning
     .warning
       = @warning
-  .scenario_options
-    = link_to t("scenario.load"),
-          load_saved_scenario_path(@saved_scenario),
-          class: "button primary"
 
-    = link_to t("scenario.load_factsheet"),
-          factsheet_scenario_path(@saved_scenario.scenario_id),
-          class: "button"
-  .description
-    %h1= (@scenario.title or t 'scenario.no_title' ).truncate(40, separator: ' ')
-    - if @scenario.description
-      %p= formatted_scenario_description(@scenario.description)
+  .options_and_description
+    .scenario_options
 
-    %p sharing links
+      = link_to t("scenario.load"),
+        load_saved_scenario_path(@saved_scenario)
 
-  .information
-    %ul
-      %li.image
-      %li
-        = t "areas.#{@scenario.area_code}"
-        \-
-        = @scenario.end_year
-      - if @scenario.created_at
-        %li
-          %strong #{t('scenario.created')}
-        %li= I18n.localize(@scenario.parsed_created_at, :format => :long)
-      - if @saved_scenario.updated_at
-        %li
-          %strong #{t('scenario.updated')}
-        %li= I18n.localize(@saved_scenario.updated_at, :format => :long)
+      %h4 Visuals
+      = link_to t("scenario.load_factsheet"),
+        factsheet_scenario_path(@saved_scenario.scenario_id)
+      %a Open het scenario rapport
+      %a Bekijk je CO_2 voetafdruk
+      %a Bekijk de graaf
+
+      %h4 Data Downloads
+      %a Download waardes gezette sliders
+      %a Data rapporten
+      %a Download energy flows
+      %a Download merit order curves
+
+      %h4 Open scenario options
+      %a Open in andere regio
+      %a Gebruik als context
+      %a Bekijk geschiedenis
+    .description
+      .image-bar
+        .chart{ style: "background: url('/assets/output_elements/demand_curve.png') no-repeat center left" }
+        .button-logo
+          = link_to 'Open in editor',
+            load_saved_scenario_path(@saved_scenario), class: 'big-button'
+          = link_to 'Open factsheet',
+            factsheet_scenario_path(@saved_scenario.scenario_id),
+            class: 'big-button'
+          .logo
+
+
+
+      .information
+
+        %h1= (@scenario.title or t 'scenario.no_title' ).truncate(40, separator: ' ')
+        %ul
+          %li
+            = t "areas.#{@scenario.area_code}"
+            = @scenario.end_year
+          %li
+            Created by
+            =@saved_scenario.user&.name
+          - if @saved_scenario.created_at
+            %li
+              = t('scenario.created')
+              = I18n.localize(@saved_scenario.created_at, :format => :long)
+          - if @saved_scenario.updated_at
+            %li
+              = t('scenario.updated')
+              = I18n.localize(@saved_scenario.updated_at, :format => :long)
+        .share
+          Share Twitter, Linkedin, Email
+        - if @scenario.description
+          .desc
+            = formatted_scenario_description(@scenario.description)
+
+
+    .dashboard
+      %h4 In 2050
+      %p CO2
+      %p.percentage +37%
+      %p Export
+      %p.percentage -10%
+      %p Kosten
+      %p.percentage +8%
+      %p Biomassa Import
+      %p.percentage +25.4%
 
     -#%p
       -#%small{:style => "font-size: 12px; font-weight: normal"}

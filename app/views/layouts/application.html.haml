@@ -24,7 +24,6 @@
         = content_for?(:content) ? yield(:content) : yield
       %footer.fixed
         = yield :footer
-        = render "layouts/etm/footer"
     :javascript
       I18n.defaultLocale = "#{I18n.default_locale}";
       I18n.locale = "#{I18n.locale}";

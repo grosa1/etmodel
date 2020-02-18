@@ -1,25 +1,29 @@
 - @saved_scenarios.each do |ss|
   - if ss.scenario&.loadable?
-    %tr{class: cycle('even', 'odd') + (' highlight' if @student_ids.include?(ss.user_id)).to_s}
-      %td= check_box_tag 'scenario_ids[]', ss.scenario.id
-      %td= link_to ss.scenario.title, ss
-      %td= ss.scenario.end_year
-      %td= ss.scenario.parsed_created_at&.strftime("%d %b %H:%M")
-      %td= ss.user.name + ' ( ' + ss.user.email + ' )'
+    / %tr{class: cycle('even', 'odd') + (' highlight' if @student_ids.include?(ss.user_id)).to_s}
+    .scenario-card
+      = check_box_tag 'scenario_ids[]', ss.scenario.id
+      .info
+        = link_to ss.scenario.title, ss
+        = t("areas.#{ss.scenario.area_code}")
+        = ss.scenario.end_year
+        .info-user
+          = ss.user.name + ' ( ' + ss.user.email + ' )'
+          = ss.scenario.parsed_created_at&.strftime("%d %b %H:%M %Y")
+      = link_to 'View', ss, class: 'button'
   - elsif current_user.admin?
-    %tr{class: "unavailable #{cycle('even', 'odd')}" }
-      -# DEBT: use I18n here.
-      %td= check_box_tag 'scenario_ids[]', -1, false, disabled: true
-      %td
-        = ss.scenario&.title
-        == (#{ss.scenario_id})
-        &ndash;
-        - if ss.scenario
-          cannot be loaded
-        - else
-          does not exist
-      %td= ""
-      %td= ss.created_at.to_datetime&.strftime("%d %b %Y")
-      %td= ss.user.email
-%tr#scenario_paginator
-  %td{colspan: 5}= link_to_next_page @saved_scenarios, 'More...', remote: true
+    / %tr{class: "unavailable #{cycle('even', 'odd')}" }
+    .scenario-card
+      = check_box_tag 'scenario_ids[]', -1, false, disabled: true
+      .info
+        .info-scenario
+          = ss.scenario&.title
+          == (#{ss.scenario_id})
+          &ndash;
+          - if ss.scenario
+            cannot be loaded
+          - else
+            does not exist
+        .info-user
+          = ss.created_at.to_datetime&.strftime("%d %b %Y")
+          = ss.user.email

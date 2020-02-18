@@ -14,19 +14,99 @@ table.compare_scenarios
   td.cell
     border: 1px solid #eee
 
-// used to highlight scenarios that belong to students
-table.default
-  tr.highlight
-    td
-      background: rgb(255, 204, 51) // The Fallback for IE < 9
-      background-color: rgba(255,204,51, 0.4)
-  tr.unavailable
-    color: #aaa
-
 // Used on scenario index/new/show pages
 .scenario_wrapper
-  padding: 40px 400px 110px 400px
+  background-color: #74a391//#eef2f7
+  padding: 0 10% 110px 10%
   display: flex
+  flex-direction: column
+  min-height: 100%
+
+  .white-container
+    background-color: white
+    padding: 30px
+    align-self: center
+    display: flex
+    flex-direction: column
+    height: 100%
+    max-width: 700px
+
+    form.new_saved_scenario
+      label
+        float: none
+      textarea
+        width: 100%
+
+    form.scenario-index
+      align-self: center
+      overflow: scroll
+      max-height: 100%
+      .scenario-card
+        width: 600px
+        margin: 10px
+        display: flex
+        input
+          height: 100%
+        .info
+          display: flex
+          flex-direction: column
+          flex-grow: 3
+          margin-left: 10px
+          a
+            font-size: 16px
+            text-decoration: none
+        a.button
+          border: 1px solid #66A2CA//#e8faf3
+          border-radius: 15px
+          background: white
+          color: #77add6
+          font-weight: normal
+          height: 18px
+
+    // table.default
+    //   td
+    //     border: none
+    //   // used to highlight scenarios that belong to students
+    //   tr.highlight
+    //     td
+    //       background: rgb(255, 204, 51) // The Fallback for IE < 9
+    //       background-color: rgba(255,204,51, 0.4)
+    //   tr.unavailable
+    //     color: #aaa
+
+  .image-bar
+    background-color: white
+    display: flex
+    justify-content: space-between
+    .chart
+      min-width: 520px
+      height: 300px
+      margin: 10px 20px 10px 0
+      background: url("/assets/output_elements/refinery.png") no-repeat left left
+      background-size: cover
+    .button-logo
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      padding: 10px 10px 20px 10px
+      a.big-button
+        align-self: center
+        border: 1px solid #66A2CA//#e8faf3
+        border-radius: 20px
+        color: #77add6
+        height: 50px
+        font-size: 18px
+        padding: 30px 10px 0 10px
+        text-decoration: none
+        text-align: center
+        width: 130px
+      .logo
+        background-color: #77add6
+        align-self: center
+        height: 83px
+        width: 95px
+        background: url("/assets/pages/home/quintel.png") center center no-repeat
+        background-size: cover
 
   .warning
     margin-top: 10px
@@ -35,31 +115,55 @@ table.default
     border: 1px solid #f00
     border-radius: 5px
 
-  .scenario_options
+  .options_and_description
     display: flex
-    flex-direction: column
 
-    a.button
-      // margin: 15px 0 15px 15px
+    .scenario_options
+      margin-top: 350px
+      align-self: flex-start
+      display: flex
+      flex-direction: column
+      min-width: 155px
+      padding: 10px
+      background-color: white
 
-  .description
-    display: flex
-    flex-direction: column
-    flex-grow: 2
-    margin-left: 50px
+    .description
+      display: flex
+      flex-direction: column
+      flex-grow: 2
+      margin-left: 50px
+      margin-right: 50px
+      padding: 20px
+      background-color: white
+      max-width: 700px
+      .information
+        min-height: 300px
+        ul
+          padding:  0
+          margin: 0
+          li
+            list-style: none
+            display: inline
+            border-right: 1px solid black
+            padding-left: 5px
+            padding-right: 5px
+            font-size: 10px
+      .share
+        color: #77add6
 
-  .information
-    margin-right: 20px
-    ul li
-      list-style: none
+    .dashboard
+      margin-top: 350px
+      align-self: flex-start
+      min-width: 155px
+      background-color: white
+      padding: 10px
 
-      &.image
-        background-color: #77add6
-        height: 150px
-        width: 150px
-        margin-bottom: 10px
+      p.percentage
+        margin-top: 0
+        font-size: 30px
+        text-align: right
 
-  hr
-    border: none
-    border-bottom: 1px solid #ddd
-    height: 1px
+    hr
+      border: none
+      border-bottom: 1px solid #ddd
+      height: 1px
