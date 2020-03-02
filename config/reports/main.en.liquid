@@ -237,7 +237,7 @@
     <h4>Merit order and fuel prices</h4>
 
     <p>
-    The elektrcity market is organized according to the so-called <i>merit order</i> of electricity production.
+    The electricity market is organized according to the so-called <i>merit order</i> of electricity production.
     			Deze sorteert regelbare elektriciteitscentrales op <i>marginale kosten</i> (de kosten van het produceren
     			van een extra MWh elektriciteit).
            		Wind, zon-PV en must-run WKK hebben effectief marginale kosten van 0 €/MWh.
@@ -275,7 +275,7 @@
     	{% endchart %}
 
 
-            	<h4> Profitability </h4>
+    <h4> Profitability </h4>
 
     <p>
     Reliability of (electricity) supply and the profitability of power plants are directly linked.
@@ -285,7 +285,7 @@
     			maar een paar keer per jaar optreden. Die centrales hebben dus typisch weinig draaiuren.
     </p>
 
-    	<!-- Unprofitable plants ->
+    	<!-- Unprofitable plants -->
     	        	{% if future.profitability_percentage < 100 %}
 
     	<p>
@@ -485,7 +485,7 @@
     <h1>4. Import and export of energy </h1>
 
 
-    <!-- If net import ->
+    <!-- If net import -->
     {% if future.total_net_energy_import > 0.0 %}
     <p>
     Your scenario has {{ future.total_net_energy_import | round: 1 | autoscale: 'MJ'}} net energy import
@@ -586,7 +586,7 @@
 
     <ul class="summary extras">
 
-    <!-- start: national CO2 targets ->
+    <!-- start: national CO2 targets -->
     {% if future.co2_reduction_percentage > 40.0 %}
     <li class="target-with">
     The realized CO<sub>2</sub>reduction in {{ settings.end_year }} of
@@ -608,7 +608,7 @@
     </li>
     {% endif %}
 
-    <!-- end: national CO2 targets ->
+    <!-- end: national CO2 targets -->
 
     {% if future.electricity_curtailed > 0 %}
     <li class="target-missed">
@@ -676,7 +676,7 @@
     </ul>
     <h2>Possible inconsistencies</h2>
 
-    <!-- Relation between EV and refineries and metal industry ->
+    <!-- Relation between EV and refineries and metal industry -->
     {% if future.ev_percentage > 50 %}
     {% if future.refinery_percentage > 50 %}
 
@@ -753,7 +753,7 @@
     </p>
 
 
-    <!-- Extreme amount of greengas ->
+    <!-- Extreme amount of greengas -->
     {% if future.share_of_greengas_in_gas_network > 0.05 %}
 
     <h3>Green gas and agricultural acreage</h3>
@@ -920,7 +920,7 @@
     {% for input in slide.user_values %}
     <li>
     {{ input.name }}:
-    {{ input.default | autoscale: input.unit }} → →
+    {{ input.default | autoscale: input.unit }} →
     {{ input.user | autoscale: input.unit }}
     </li>
     {% endfor %}
@@ -997,6 +997,6 @@
 
     </p>
 
-    <!-- end: main summary items ->
+    <!-- end: main summary items -->
 
 </main>
