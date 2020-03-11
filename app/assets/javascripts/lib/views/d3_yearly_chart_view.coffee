@@ -166,10 +166,14 @@ class @D3YearlyChartView extends D3ChartView
     d3.svg.axis().scale(scale).orient('bottom').tickFormat(format).ticks(7)
 
   visibleData: =>
-    @rawChartData.map (serie) =>
-      $.extend({}, serie, values: MeritTransformator.transform(
-        serie.values || [], this.dateSelect.val(), @downsampleWith
-      ))
+    unsampledData = @rawChartData.map((serie) => serie.values || [])
+
+    sampledData = MeritTransformator.transformMany(
+      unsampledData, this.dateSelect.val(), @downsampleWith
+    )
+
+    @rawChartData.map (serie, index) =>
+      $.extend({}, serie, values: sampledData[index])
 
   convertData: =>
     @convertToXY(@visibleData())
