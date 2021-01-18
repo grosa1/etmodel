@@ -47,7 +47,7 @@ module YModel
 
     def source_files
       if compiled?
-        Dir.glob(File.join(source, '*.yml'))
+        Dir.glob(File.join(source, '**', '*.yml'))
       else
         [@source]
       end
