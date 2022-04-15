@@ -155,6 +155,8 @@ en:
       power-to-gas: "p2g"
       p2p: "power-to-power"
       p2h: "power-to-heat"
+      p2h_central_heat: "power-to-heat central heat"
+      p2h_industry: "power-to-heat industry"
       nuclear: "nuclear"
       biomass: "biomass"
       renewable_electricity: "renewable electricity"
