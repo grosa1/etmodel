@@ -347,21 +347,20 @@ D3.sankey =
           {left: 'solar',                         right: 'central_heat_prod', gquery: 'solar_to_central_heat_prod_in_sankey', color: '#ffcc00'},
           {left: 'wind',                          right: 'central_heat_prod', gquery: 'wind_to_central_heat_prod_in_sankey', color: '#63A1C9'},
           {left: 'biomass_products',              right: 'central_heat_prod', gquery: 'biomass_products_to_central_heat_prod_in_sankey', color: '#2ca02c'},
-          {left: 'geo_ambient',                   right: 'central_heat_prod', gquery: 'geo_ambient_to_central_heat_prod_in_sankey', color: '#787821'},
+          {left: 'geo_ambient',                   right: 'central_heat_prod', gquery: 'geo_ambient_to_central_heat_prod_excl_p2h_in_sankey', color: '#787821'},
           {left: 'imported_heat',                 right: 'central_heat_prod', gquery: 'imported_heat_to_central_heat_prod_in_sankey', color: '#d62728'},
           {left: 'nuclear',                       right: 'central_heat_prod', gquery: 'nuclear_to_central_heat_prod_in_sankey', color: '#ff7f0e'},
           {left: 'water',                         right: 'central_heat_prod', gquery: 'water_to_central_heat_prod_in_sankey', color: '#4465c6'},
-          {left: 'solar',                         right: 'central_heat_prod', gquery: 'solar_to_central_heat_prod_in_sankey', color: '#ffcc00'},
 
           {left: 'hydrogen_prod',                 right: 'electricity_prod',  gquery: 'hydrogen_prod_to_electricity_prod_in_sankey', color: '#27d3d3'},
 
-          {left: 'electricity_prod',              right: 'central_heat_prod', gquery: 'electricity_prod_to_central_heat_prod_in_sankey', color: '#1f77b4'},
+          {left: 'electricity_prod',              right: 'central_heat_prod', gquery: 'electricity_prod_to_central_heat_prod_excl_p2h_in_sankey', color: '#1f77b4'},
           {left: 'hydrogen_prod',                 right: 'central_heat_prod', gquery: 'hydrogen_prod_to_central_heat_prod_in_sankey', color: '#27d3d3'},
 
           {left: 'electricity_prod',              right: 'households',       gquery: 'electricity_prod_to_households_in_sankey', color: '#1f77b4'},
           {left: 'electricity_prod',              right: 'buildings',        gquery: 'electricity_prod_to_buildings_in_sankey', color: '#1f77b4'},
           {left: 'electricity_prod',              right: 'transport',        gquery: 'electricity_prod_to_transport_in_sankey', color: '#1f77b4'},
-          {left: 'electricity_prod',              right: 'industry',         gquery: 'electricity_prod_to_industry_in_sankey', color: '#1f77b4'},
+          {left: 'electricity_prod',              right: 'industry',         gquery: 'electricity_prod_to_industry_excl_p2h_in_sankey', color: '#1f77b4'},
           {left: 'electricity_prod',              right: 'feedstock',        gquery: 'electricity_prod_to_feedstock_in_sankey', color: '#1f77b4'},
           {left: 'electricity_prod',              right: 'agriculture',      gquery: 'electricity_prod_to_agriculture_in_sankey', color: '#1f77b4'},
           {left: 'electricity_prod',              right: 'energy',           gquery: 'electricity_prod_to_energy_in_sankey', color: '#1f77b4'},
@@ -404,7 +403,7 @@ D3.sankey =
           {left: 'central_heat_prod',             right: 'agriculture',      gquery: 'central_heat_prod_to_agriculture_in_sankey', color: '#d62728'},
           {left: 'central_heat_prod',             right: 'energy',           gquery: 'central_heat_prod_to_energy_in_sankey', color: '#d62728'},
           {left: 'central_heat_prod',             right: 'other',            gquery: 'central_heat_prod_to_other_in_sankey', color: '#d62728'},
-          {left: 'central_heat_prod',             right: 'conversion_losses', gquery: 'central_heat_prod_to_conversion_loss_in_sankey', color: '#DCDCDC'},
+          {left: 'central_heat_prod',             right: 'conversion_losses', gquery: 'central_heat_prod_excl_p2h_to_conversion_loss_in_sankey', color: '#DCDCDC'},
           {left: 'central_heat_prod',             right: 'transport_losses',  gquery: 'central_heat_prod_to_transport_loss_in_sankey', color: '#DCDCDC'},
 
           {left: 'p2p',                           right: 'electricity_prod',  gquery: 'p2p_to_electricity_prod_in_sankey', color: '#1f77b4'},
