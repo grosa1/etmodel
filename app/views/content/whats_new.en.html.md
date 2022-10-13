@@ -1,3 +1,7 @@
+# What's new in the Energy Transition Model?
+
+---
+
 # September 2022
 
 ## Update of the transition path charts tool
